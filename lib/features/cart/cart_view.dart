@@ -3,7 +3,7 @@ import 'package:task/core/widgets/custom_button.dart';
 import 'package:task/features/cart/views/cart_item.dart';
 
 import '../../constants.dart';
-import 'data/dummy_products.dart';
+import 'data/dummy_cart_item.dart';
 import 'views/cart_view_body.dart';
 
 class CartView extends StatelessWidget {

@@ -16,19 +16,19 @@ class ProductModel {
 
 List<ProductModel> dummyProducts = [
   ProductModel(
-    imageUrl: "assets/images/cat6.png",
+    imageUrl: "assets/images/pro.png",
     name: 'Apple',
     portion: '1 kg',
     price: 3.99,
   ),
   ProductModel(
-    imageUrl: "assets/images/cat2.png",
+    imageUrl: "assets/images/pro.png",
     name: 'Banana',
     portion: '1 kg',
     price: 1.99,
   ),
   ProductModel(
-    imageUrl: "assets/images/cat3.png",
+    imageUrl: "assets/images/pro.png",
     name: 'Orange',
     portion: '1 kg',
     price: 2.99,
@@ -40,25 +40,25 @@ List<ProductModel> dummyProducts = [
     price: 4.99,
   ),
   ProductModel(
-    imageUrl: "assets/images/cat6.png",
+    imageUrl: "assets/images/pro.png",
     name: 'Grapes',
     portion: '1 kg',
     price: 3.49,
   ),
   ProductModel(
     imageUrl: "assets/images/cat6.png",
-    name: 'Watermelon',
+    name: 'cock',
     portion: '1 piece',
     price: 5.99,
   ),
   ProductModel(
-    imageUrl: "assets/images/cat2.png",
+    imageUrl: "assets/images/pro.png",
     name: 'Pineapple',
     portion: '1 piece',
     price: 3.99,
   ),
   ProductModel(
-    imageUrl: "assets/images/ca5.png",
+    imageUrl: "assets/images/ca3.png",
     name: 'Blueberry',
     portion: '200 g',
     price: 2.99,

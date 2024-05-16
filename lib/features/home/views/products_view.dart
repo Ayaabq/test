@@ -3,13 +3,13 @@ import 'package:task/features/home/data/dummy_products.dart';
 import 'package:task/features/home/views/product_item.dart';
 
 class ProductView extends StatelessWidget {
-  const ProductView({super.key});
-
+  const ProductView({super.key, required this.categoryTitle});
+  final String categoryTitle;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Products"),
+        title:  Text(categoryTitle),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),

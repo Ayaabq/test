@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task/features/cart/views/cart_item.dart';
 
-import '../data/dummy_products.dart';
+import '../data/dummy_cart_item.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
