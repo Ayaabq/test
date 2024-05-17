@@ -26,7 +26,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kProductView,
-        builder: (ctx, state) => const ProductView(),
+        builder: (ctx, state) => const  ProductView(categoryTitle: 'prodect',)
       ),
 
 
