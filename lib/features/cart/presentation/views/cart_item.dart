@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task/features/cart/data/models/cart_model.dart';
+import 'package:task/features/home/data/models/product_model.dart';
 
-class CartItem extends StatefulWidget {
-  const CartItem({super.key, required this.cartItem});
+class CartItem extends ConsumerWidget {
+  const CartItem({super.key, required this.cartItem, required this.productModel});
   final CartModel cartItem;
-  @override
-  State<CartItem> createState() => _CartItemState();
-}
+  final ProductModel productModel;
 
-class _CartItemState extends State<CartItem> {
-  void _increaseQuantity() {
-    setState(() {
-      widget.cartItem.quantity++;
-    });
-  }
 
-  void _decreaseQuantity() {
-    setState(() {
-      if (widget.cartItem.quantity > 1) {
-        widget.cartItem.quantity--;
-      }
-    });
-  }
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    void _increaseQuantity() {
+      cartItem.quantity++;
+
+    }
+
+    void _decreaseQuantity() {
+
+        if (cartItem.quantity > 1) {
+          cartItem.quantity--;
+
+    }}
     return  SizedBox(
       height: 157,
       width: double.infinity,
@@ -34,23 +33,23 @@ class _CartItemState extends State<CartItem> {
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 35),
-              child: Image.asset(widget.cartItem.imageUrl,
+              child: Image.asset(productModel.imageUrl,
               width: 70,
               height: 64,),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Text(widget.cartItem.title,
+                 Text(productModel.name,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16
                 ),),
-                const Text("1kg, Price"),
+                 Text("${productModel.portion}, Price"),
                  Row(
                    children: [
                      IconButton(onPressed: _increaseQuantity, icon: const Icon(Icons.add)),
-                      Text(widget.cartItem.quantity.toString()),
+                      Text(cartItem.quantity.toString()),
                      IconButton(onPressed: _decreaseQuantity, icon: const Icon(Icons.minimize))
                    ],
                  )
@@ -60,7 +59,7 @@ class _CartItemState extends State<CartItem> {
             Column(children: [
               IconButton(onPressed: (){}, icon: const Icon(Icons.close)),
               const Spacer(),
-               Text("${widget.cartItem.quantity *widget.cartItem.price}\$",
+               Text("${cartItem.quantity *productModel.price}\$",
               style: const TextStyle(
                 fontWeight: FontWeight.bold
               ),)

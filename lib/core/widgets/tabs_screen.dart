@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:task/features/cart/cart_view.dart';
-import 'package:task/features/cart/views/cart_view_body.dart';
-import 'package:task/features/home/home_view.dart';
-import 'package:task/features/home/views/home_view_body.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:task/features/cart/presentation/views/cart_view.dart';
 
-class TabsScreen extends StatefulWidget {
+import '../../features/home/presentation/views/widgets/home_view_body.dart';
+
+class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
   @override
-  State<TabsScreen> createState() => _TabsScreenState();
+  ConsumerState<TabsScreen> createState() => _TabsScreenState();
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
 
 

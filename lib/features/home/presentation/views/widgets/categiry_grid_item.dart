@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../data/models/category_model.dart';
+import '../../../data/models/category_model.dart';
 
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({
@@ -48,7 +48,7 @@ class CategoryGridItem extends StatelessWidget {
               Text(
                 category.title,
                 textAlign: TextAlign.center,
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   color: Colors.black,

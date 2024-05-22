@@ -1,13 +1,8 @@
-class CartModel {
-  final String imageUrl;
-  final String title;
-  int quantity;
-  final double price;
+import '../../../home/data/models/product_model.dart';
 
-  CartModel({
-    required this.imageUrl,
-    required this.title,
-    this.quantity = 1,
-    required this.price,
-  });
+class CartModel {
+  final int productId;
+  int quantity;
+
+  CartModel({required this.productId, required this.quantity});
 }

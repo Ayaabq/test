@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task/core/widgets/custom_button.dart';
-import 'package:task/features/cart/views/cart_item.dart';
+import 'package:task/features/cart/presentation/views/cart_view_body.dart';
 
-import '../../constants.dart';
-import 'data/dummy_cart_item.dart';
-import 'views/cart_view_body.dart';
+import '../../../../constants.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -40,7 +38,7 @@ class CartView extends StatelessWidget {
                        fontSize: 40,
                        fontWeight: FontWeight.bold
                      ),),
-                     SizedBox(height: 400,),
+                     const SizedBox(height: 400,),
                      CustomButton(onTap: (){}, title: "Order please")
                    ],
                  ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task/core/utils/app_router.dart';
-import 'package:task/features/on_boarding/on_boarding.dart';
 
 void main() {
-  runApp(const Test());
+  runApp(const ProviderScope(child: Test()));
 }
 
 class Test extends StatelessWidget {
@@ -12,6 +12,7 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
 
     );
