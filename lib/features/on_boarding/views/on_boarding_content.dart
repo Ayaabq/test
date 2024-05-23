@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:task/core/utils/assets.dart';
 import 'package:task/core/utils/screen_size_util.dart';
 import 'package:task/core/widgets/custom_button.dart';
+import 'package:task/generated/assets.dart';
 
 import '../../../core/utils/app_router.dart';
 
@@ -18,7 +18,7 @@ class OnBoardingContent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
 
         children: [
-          Image.asset(AssetsData.logo,
+          Image.asset(Assets.imagesLogo,
               width: 48.47,
               height: 56.36,
 

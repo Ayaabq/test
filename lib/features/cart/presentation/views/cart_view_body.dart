@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task/features/cart/data/models/cart_model.dart';
+import 'package:task/features/cart/data/models/cart_item_model.dart';
 import 'package:task/features/cart/presentation/maneger/cart_provider.dart';
-import 'package:task/features/cart/presentation/views/empty_cart.dart';
+import 'package:task/features/cart/presentation/views/widgets/empty_cart.dart';
 import 'package:task/features/home/presentation/maneger/product_provider.dart';
 
-import 'cart_item.dart';
+import 'widgets/cart_item.dart';
 
 class CartViewBody extends ConsumerWidget {
   const CartViewBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<CartModel> cartItems= ref.watch(cartProvider);
+    List<CartItemModel> cartItems= ref.watch(cartProvider);
 
     void increaseQuantity(int index) {
       ref.watch(cartProvider.notifier).addToCart(cartItems[index].productId);

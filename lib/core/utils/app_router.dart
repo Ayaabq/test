@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:task/core/widgets/tabs_screen.dart';
+import 'package:task/features/cart/presentation/views/widgets/order/order_accepteed.dart';
 import 'package:task/features/home/presentation/views/home_view.dart';
 import 'package:task/features/on_boarding/on_boarding.dart';
 
@@ -10,6 +11,7 @@ abstract class AppRouter {
   static const kOnBoarding = '/';
   static const kTabView ='/TabView';
   static const kProductView ='/ProductView/:id';
+  static const kOrderAccepted ='/OrderAccepted';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -29,6 +31,10 @@ abstract class AppRouter {
           return ProductView(categoryId: id!);
 
         }
+      ),
+      GoRoute(
+        path: kOrderAccepted,
+        builder: (ctx, state) => const OrderAccepted(),
       ),
 
 

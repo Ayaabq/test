@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task/features/cart/presentation/views/cart_button.dart';
+import 'package:task/features/cart/presentation/views/widgets/cart_button.dart';
 import 'package:task/features/cart/presentation/views/cart_view_body.dart';
 
-import '../../features/cart/presentation/views/checkout_bottom_sheet.dart';
+import '../../features/cart/presentation/views/widgets/order/checkout_bottom_sheet.dart';
 import '../../features/home/presentation/views/widgets/home_view_body.dart';
 
 class TabsScreen extends ConsumerStatefulWidget {

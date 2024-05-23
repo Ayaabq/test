@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task/core/utils/assets.dart';
+
+import '../../../generated/assets.dart';
 
 class OnBoardingBackground extends StatelessWidget {
   const OnBoardingBackground({super.key});
@@ -9,7 +10,7 @@ class OnBoardingBackground extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          AssetsData.getStarted,
+         Assets.imagesGetStarted,
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.cover,

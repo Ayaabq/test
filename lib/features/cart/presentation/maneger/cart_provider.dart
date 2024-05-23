@@ -1,11 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task/features/cart/data/models/cart_model.dart';
+import 'package:task/features/cart/data/dummy_orders.dart';
+import 'package:task/features/cart/data/models/cart_item_model.dart';
+import 'package:task/features/cart/data/models/order_model.dart';
 import 'package:task/features/home/presentation/maneger/product_provider.dart';
 
-class CartNotifier extends StateNotifier<List<CartModel>> {
+class CartNotifier extends StateNotifier<List<CartItemModel>> {
   CartNotifier() : super([]);
   addToCart(int productId) {
-    List<CartModel> temp = List.from(state);
+    List<CartItemModel> temp = List.from(state);
 
     bool exists = temp
         .where((cartModel) => cartModel.productId == productId)
@@ -16,11 +18,11 @@ class CartNotifier extends StateNotifier<List<CartModel>> {
         var e = temp[i];
         if (temp[i].productId == productId) {
           temp[i] =
-              CartModel(productId: e.productId, quantity: (e.quantity + 1));
+              CartItemModel(productId: e.productId, quantity: (e.quantity + 1));
         }
       }
     } else {
-      temp.add(CartModel(productId: productId, quantity: 1));
+      temp.add(CartItemModel(productId: productId, quantity: 1));
     }
     state = temp;
   }
@@ -32,7 +34,7 @@ class CartNotifier extends StateNotifier<List<CartModel>> {
   }
 
   decreaseQuantity(int productId) {
-    List<CartModel> temp = List.from(state);
+    List<CartItemModel> temp = List.from(state);
     for (int i = 0; i < temp.length; i++) {
       var e = temp[i];
       if (e.productId == productId) {
@@ -40,7 +42,7 @@ class CartNotifier extends StateNotifier<List<CartModel>> {
           deleteFromCart(productId);
         } else {
           temp[i] =
-              CartModel(productId: e.productId, quantity: (e.quantity - 1));
+              CartItemModel(productId: e.productId, quantity: (e.quantity - 1));
           state = temp;
         }
       }
@@ -51,7 +53,7 @@ class CartNotifier extends StateNotifier<List<CartModel>> {
   double totalPrice(WidgetRef ref) {
      ref.watch(cartProvider);
     double total = 0;
-    for (CartModel item in state) {
+    for (CartItemModel item in state) {
       var productPrice =
           ref.read(productsProvider.notifier).findProduct(item.productId).price;
       total += item.quantity * productPrice;
@@ -59,9 +61,14 @@ class CartNotifier extends StateNotifier<List<CartModel>> {
 
     return total;
   }
+
+  makeOrder(OrderModel orderModel){
+    dummyOrders.add(orderModel);
+    state=[];
+  }
 }
 
 final cartProvider =
-    StateNotifierProvider<CartNotifier, List<CartModel>>((ref) {
+    StateNotifierProvider<CartNotifier, List<CartItemModel>>((ref) {
   return CartNotifier();
 });
