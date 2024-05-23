@@ -11,7 +11,7 @@ List<CategoryModel> dummyCategoriesData = [
     color: const Color(0xff53B1751A),
     title: "Fresh Fruits & Vegetables",
     imageUrl: "assets/images/cat1.png",
-    items: initProducts.sublist(0, 8), // Add relevant products to this category
+    items: initProducts.sublist(0, 4), // Add relevant products to this category
   ),
   CategoryModel(
     id: 2,

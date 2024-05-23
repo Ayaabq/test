@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
           return CategoryGridItem(
             category: dummyCategoriesData[index],
             onSelectedCategory: (index) {
-              _selectCategory(context, index);
+              _selectCategory(context, dummyCategoriesData[index].id);
             },
           );
         },
