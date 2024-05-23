@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task/core/widgets/custom_button.dart';
 import 'package:task/core/widgets/price_text.dart';
 import 'package:task/features/cart/data/dummy_orders.dart';
 import 'package:task/features/cart/data/models/order_model.dart';
 import 'package:task/features/cart/presentation/maneger/cart_provider.dart';
 import 'package:task/features/cart/presentation/views/widgets/order/order_section.dart';
+
+import '../../../../../../core/utils/app_router.dart';
 
 class CheckoutBottomSheet extends ConsumerStatefulWidget {
   const CheckoutBottomSheet({super.key});
@@ -36,7 +39,7 @@ class _CheckoutBottomSheetState extends ConsumerState<CheckoutBottomSheet> {
         payment: selectedPayment, delivery: selectedDelivery);
     ref.read(cartProvider.notifier).makeOrder(orderModel);
     //print(dummyOrders.length);
-        Navigator.of(context).pop();
+    GoRouter.of(context ).push(AppRouter.kOrderAccepted);
   }
 
   @override
