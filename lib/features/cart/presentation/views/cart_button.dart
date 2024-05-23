@@ -18,9 +18,10 @@ class CartButton extends ConsumerWidget {
       children: [
         CustomButton(onTap: onTap,
             title: title),
+        if(!isEmpty)
         Positioned(
-          top: 8, // Adjust this value as needed to position the container
-          right: 8, // Adjust this value as needed to position the container
+          top: 5,
+          right: 8,
           child: Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(

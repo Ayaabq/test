@@ -12,5 +12,6 @@ class Assets {
   static const String imagesGetStarted = 'assets/images/get_started.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesPro = 'assets/images/pro.png';
+  static const String imagesSplash = 'assets/images/splash.png';
 
 }
