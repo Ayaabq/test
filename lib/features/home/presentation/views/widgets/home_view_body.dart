@@ -7,7 +7,7 @@ import 'categiry_grid_item.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
   void _selectCategory(BuildContext context, int index) {
-    GoRouter.of(context).push('/ProductView/${dummyCategoriesData[index].id}');
+    GoRouter.of(context).push('/ProductView/$index');
   }
 
   @override
@@ -25,8 +25,9 @@ class HomeViewBody extends StatelessWidget {
         itemBuilder: (context, index) {
           return CategoryGridItem(
             category: dummyCategoriesData[index],
-            onSelectedCategory: (index) {
-              _selectCategory(context, dummyCategoriesData[index].id);
+            onSelectedCategory: (n) {
+              int id=dummyCategoriesData[index].id;
+              _selectCategory(context, id);
             },
           );
         },

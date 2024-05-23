@@ -46,7 +46,7 @@ class ProductView extends ConsumerWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(dummyCategoriesData[categoryId - 2].title),
+        title: Text(dummyCategoriesData[categoryId -1].title),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

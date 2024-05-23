@@ -25,6 +25,7 @@ abstract class AppRouter {
         builder: (ctx, state) {
           final idStr = state.pathParameters['id']!;
           final id = int.parse(idStr);
+          print(idStr);
           return ProductView(categoryId: id);
 
         }
