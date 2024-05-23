@@ -5,8 +5,8 @@ class OrderAccepted extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return
+       Column(
         children: [
           Image.asset("assets/images/cat6.png"),
           const Text("Your Order has been accepted",
@@ -17,8 +17,8 @@ class OrderAccepted extends StatelessWidget {
           const Text("Your items has been placcd and is on it’s way to being processed"),
 
         ],
-      ),
-    );
+      )
+    ;
   }
 }
 

@@ -8,7 +8,7 @@ class ProductsNotifier extends StateNotifier<List<ProductModel>> {
    categoryProducts(int catId){
    return state.where((product) => product.categoryId==catId).toList();
   }
-  findProduct(int id){
+  ProductModel findProduct(int id){
      return state.where((product) => product.id==id).toList()[0];
   }
 }

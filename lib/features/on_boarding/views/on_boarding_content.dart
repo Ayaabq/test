@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:task/core/utils/assets.dart';
 import 'package:task/core/utils/screen_size_util.dart';
-import 'package:task/features/on_boarding/views/on_boarding_button.dart';
+import 'package:task/core/widgets/custom_button.dart';
+
+import '../../../core/utils/app_router.dart';
 
 class OnBoardingContent extends StatelessWidget {
   const OnBoardingContent({super.key});
@@ -43,7 +46,9 @@ class OnBoardingContent extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          const OnBoardingButton(),
+           CustomButton(onTap: (){
+            GoRouter.of(context ).push(AppRouter.kTabView);
+          },   title: "Get Started"),
           SizedBox(height: ScreenSizeUtil.screenHeight *.1,)
         ],
       ),

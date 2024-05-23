@@ -8,7 +8,6 @@ import '../../features/home/presentation/views/widgets/products_view.dart';
 abstract class AppRouter {
   // static const kGetStartedView = "/GetStartedView";
   static const kOnBoarding = '/';
-  static const kHomeView ='/HomeView';
   static const kTabView ='/TabView';
   static const kProductView ='/ProductView/:id';
   static final router = GoRouter(
@@ -17,11 +16,8 @@ abstract class AppRouter {
         path: kOnBoarding,
         builder: (ctx, state) => const OnBoarding(),
       ),
+
       GoRoute(
-        path: kHomeView,
-        builder: (ctx, state) => const HomeView(),
-      ),
- GoRoute(
         path: kTabView,
         builder: (ctx, state) => const TabsScreen(),
       ),
