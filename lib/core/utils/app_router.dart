@@ -1,13 +1,10 @@
 import 'package:go_router/go_router.dart';
 import 'package:task/core/widgets/tabs_screen.dart';
 import 'package:task/features/cart/presentation/views/widgets/order/order_accepteed.dart';
-import 'package:task/features/home/presentation/views/home_view.dart';
 import 'package:task/features/on_boarding/on_boarding.dart';
-
 import '../../features/home/presentation/views/widgets/products_view.dart';
 
 abstract class AppRouter {
-  // static const kGetStartedView = "/GetStartedView";
   static const kOnBoarding = '/';
   static const kTabView ='/TabView';
   static const kProductView ='/ProductView/:id';
@@ -28,7 +25,7 @@ abstract class AppRouter {
         builder: (ctx, state) {
           final idStr = state.pathParameters['id']!;
           final id = int.parse(idStr);
-          return ProductView(categoryId: id!);
+          return ProductView(categoryId: id);
 
         }
       ),

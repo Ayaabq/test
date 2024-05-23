@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:task/core/widgets/price_text.dart';
 import 'package:task/features/cart/data/models/cart_item_model.dart';
-import 'package:task/features/cart/presentation/maneger/cart_provider.dart';
 import 'package:task/features/home/data/models/product_model.dart';
 
 class CartItem extends ConsumerWidget {
@@ -28,9 +27,7 @@ class CartItem extends ConsumerWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(right: 35),
-              child: Image.asset(productModel.imageUrl,
-              width: 70,
-              height: 64,),
+              child: productModel.getImageWithFixedSize(68, 70)
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

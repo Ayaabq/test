@@ -9,5 +9,7 @@ class CategoryModel{
   final String imageUrl;
   final List<ProductModel> items;
 
-  CategoryModel({required this.id, required this.color, required this.title, required this.imageUrl, required this.items});
+  CategoryModel({required this.id, required this.color,
+    required this.title, required this.imageUrl,
+    required this.items});
 }

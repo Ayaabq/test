@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task/constants.dart';
 import 'package:task/core/utils/screen_size_util.dart';
+import 'package:task/core/widgets/custom_add_button.dart';
 import 'package:task/features/cart/presentation/maneger/cart_provider.dart';
-import 'package:task/features/home/data/dummy_products.dart';
 
 import '../../../data/models/product_model.dart';
 
@@ -29,11 +26,7 @@ class ProductItem extends ConsumerWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            productModel.imageUrl,
-            width: 44,
-            height: 89,
-          ),
+          productModel.getImageWithFixedSize(50,   50),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
@@ -54,29 +47,23 @@ class ProductItem extends ConsumerWidget {
                   ),
                 ),
                 Text(productModel.portion),
-                Text("${productModel.price}\$",
-                    style:const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        overflow: TextOverflow.ellipsis)),
-              ]),
-
-              const Spacer(),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    color: kPrimaryColor,
-                  ),
-                  child: IconButton(
-                    onPressed: addToCart,
-                    icon: const Icon(Icons.add),
-                    color: Colors
-                        .white, // Set icon color to white or any other contrasting color
+                SizedBox(
+                  width: ScreenSizeUtil.screenWidth/3.5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("${productModel.price}\$",
+                          style:const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              overflow: TextOverflow.ellipsis)),
+                      AddButton(onTap: addToCart,),
+                    ],
                   ),
                 ),
-              )
+              ]),
+
+
             ]),
           )
         ],
