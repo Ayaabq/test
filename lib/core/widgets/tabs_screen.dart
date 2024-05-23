@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:task/core/widgets/custom_button.dart';
 import 'package:task/features/cart/presentation/views/cart_button.dart';
 import 'package:task/features/cart/presentation/views/cart_view_body.dart';
 
@@ -51,8 +50,12 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
           ? Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: CartButton(
-                onTap: () => showCheckoutBottomSheet(context),
-                title: "Checkout",
+                onBackToAdd: (){
+                  setState(() {
+                    _selectedPageIndex = 0;
+                  });
+                  },
+                onCheckout: () => showCheckoutBottomSheet(context),
               ),
             )
           : null,
