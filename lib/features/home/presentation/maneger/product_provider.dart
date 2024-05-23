@@ -5,7 +5,7 @@ import 'package:task/features/home/data/models/product_model.dart';
 class ProductsNotifier extends StateNotifier<List<ProductModel>> {
 
   ProductsNotifier() : super(dummyProducts);
-   categoryProducts(int catId){
+  List<ProductModel> categoryProducts(int catId){
    return state.where((product) => product.categoryId==catId).toList();
   }
   ProductModel findProduct(int id){
